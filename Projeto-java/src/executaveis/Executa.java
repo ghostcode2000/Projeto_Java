@@ -1,6 +1,12 @@
-package cursojava.classes;
+package executaveis;
 
-public class Executavel {
+import cursojava.classes.Aluno;
+import cursojava.classes.Diretor;
+import cursojava.classes.Pessoa;
+import cursojava.classes.Secretario;
+
+public class Executa {
+
 
 	public static void main(String[] args) {
 	
