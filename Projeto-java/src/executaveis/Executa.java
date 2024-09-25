@@ -11,12 +11,12 @@ public class Executa {
 	public static void main(String[] args) {
 	
 		
-		Aluno aluno = new Aluno (null);
+		Aluno aluno = new Aluno ();
 		aluno.setNome("Nata moreira = treinamento");
 		aluno.setNomeEscola("JDev treinamentos");
 		aluno.setIdade(16);
 		
-		Diretor diretor = new Diretor();
+		Diretor diretor = new Diretor(null, null);
 		diretor.setRegistroGeral("512515151");
 		diretor.setIdade(50);
 		diretor.setNome("Ruan");
