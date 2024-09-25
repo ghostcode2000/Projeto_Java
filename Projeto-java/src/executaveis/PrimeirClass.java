@@ -36,8 +36,8 @@ public class PrimeirClass {
 				String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina"+pos+"?");
 			
 				Disciplina disciplina = new  Disciplina();
-				disciplina.nomeDisciplina(nomeDisciplina);
-				disciplina.setNota(Double.valueOf(notaDisciplina));
+				disciplina.setNomeDisciplina(nomeDisciplina);
+				disciplina.setNotaDisplina(pos);
 			
 				aluno1.getDisciplina().add(disciplina);
 			

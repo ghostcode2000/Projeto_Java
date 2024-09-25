@@ -94,7 +94,7 @@ public class Aluno extends Pessoa {
 
 		double somaNotas = 0.0;
 		for (Disciplina disciplina : disciplinas) {
-			somaNotas += disciplina.getNota1();
+			somaNotas += disciplina.getNotaDisplina();
 		}
 
 		return somaNotas / disciplinas.size();
