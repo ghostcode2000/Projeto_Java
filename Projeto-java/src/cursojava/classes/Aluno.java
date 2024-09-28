@@ -136,4 +136,5 @@ public class Aluno extends Pessoa {
 	public double salario() {
 		return 1500.00;
 	}
+	/**/
 }
