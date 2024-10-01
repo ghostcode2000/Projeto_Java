@@ -5,21 +5,22 @@ import javax.swing.JOptionPane;
 public class ArrayVetor {
 
 	public static void main(String[] args) {
-		
-	//Array pode ser de todos os tipos de dados e objetos também	
-		
-		String posicoes = JOptionPane.showInputDialog("Quantas posições o Array deve ter?");
-		
-		//Array sempre deve ter a qunatidde de posições definidas
-		double [] notas = new double[Integer.parseInt(posicoes)];
-		
-		/*Atribuir valor nas posições do arrays*/
 	
+	//Outra forma de criar um array e varelo.	
+	String[]	valores = {"alex","90","Curso Java","contato@jdev",};
 		
-	for (int pos = 0 ;pos < notas.length ; pos++) {
-		System.out.println("Nota "+ (pos +1 )+" é = " + notas[pos]);
+	
+	for (int pos = 0 ;pos < valores.length ; pos++) {
+		System.out.println("Valor na posição "+ (pos +1 )+" é = " + valores[pos]);
 	}
-		
+	
+	
+	
+	
+	
+	
+	
+	
 	}
 	
 }
