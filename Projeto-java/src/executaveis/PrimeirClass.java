@@ -2,6 +2,7 @@ package executaveis;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.ObjectInputFilter.Status;
 import java.security.PublicKey;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,9 +28,8 @@ public class PrimeirClass {
 			
 			String login = JOptionPane.showInputDialog("Informe o login:");
 			String senha = JOptionPane.showInputDialog("Informe a senha:");
-
-			if (new FuncaoAtenticacao(new Diretor(login, senha))
-					.autenticar()) { /*
+			
+			if (new FuncaoAtenticacao(new Diretor(login, senha)).autenticar()) { /*
 										 * Vou traavar o contrato para autorizar somente quem realmente tem o contrato
 										 * 100% legitimo
 			
@@ -63,9 +63,23 @@ public class PrimeirClass {
 				aluno1.getDisciplina().add(disciplina);
 			
 			}
-	
-				
 			
+			maps.put(StatusAluno.APROVADO, new ArrayList<Aluno>());  /*Separe em listas*/
+			maps.put(StatusAluno.REPROVADO, new ArrayList<Aluno>());	
+			maps.put(StatusAluno.RECUPERACAO, new ArrayList<Aluno>());
+				
+			for (Aluno aluno : alunos) {
+				
+				if (aluno.getAlunoAprovado2()).equalsIgnoreCase(Status.APROVADO)) {
+					maps.get(Status.APROVADO).add(aluno);
+				}else
+				if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.RECUPERACAO)) {
+					maps.get(StatusAluno.RECUPERACAO).add(aluno);
+				}else if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.REPROVADO)) {
+					maps.get(StatusAluno.REPROVADO).add(aluno);
+				}
+				
+			}
 
 			    System.out.println(aluno1.getNome());//Descrição do objeto na memoria
 			    System.out.println("Média do aluno = " + aluno1.getMediaNota() );
@@ -77,7 +91,7 @@ public class PrimeirClass {
 			/* aqui */
 
 	
-		}catch (NumberFormatException e) { //Captura so numberformatexeption
+		}catch (Exception e) { //Captura so numberformatexeption
 			
 			StringBuilder saida = new StringBuilder();
 			
@@ -92,15 +106,6 @@ public class PrimeirClass {
 			saida.append("\n Classe de erro : "+e.getStackTrace()[pos].getLineNumber());
 			saida.append("\n Class: "+e.getClass().getName());
 		}
-			
-			
-			JOptionPane.showInternalMessageDialog(null, "Erro de conversão de numero" + saida.toString());
-		} catch (NullPointerException e) {//Captura so NullPointerException
-			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Oppa um null pointer exeption"+ e.getClass());
-		}catch (Execao_ProcessarNota e) { /*captura todas a exceções n previstas*/
-			e.printStackTrace();
-		JOptionPane.showMessageDialog(null, "Erro da execao customizada: " +e.getClass().getName());
 		
 		} finally { /*Sempre é executado ocorrendo erros ou não porque*/
 			//Finally sempre é usado quando precisa exercutar um processo acontecendo erro ou não.
@@ -108,15 +113,11 @@ public class PrimeirClass {
 		}
 	
 		}
-	public static void lerArquivo () throws Execao_ProcessarNota  {
-try {
-		File fil = new File("c:lines.txt");
+	public static void lerArquivo () throws FileNotFoundException  {
+
+		File fil = new File("c://lines.txt");
 		Scanner scanner = new Scanner(fil);
-}catch (FileNotFoundException e) {
-	throw new  Execao_ProcessarNota(e.getMessage());
-}		
-
-		}
-	}
-	
-
+		
+		
+	} 
+}

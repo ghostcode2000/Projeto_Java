@@ -93,8 +93,9 @@ public class Aluno extends Pessoa {
 	public double getMediaNota() {
 
 		double somaNotas = 0.0;
+	
 		for (Disciplina disciplina : disciplinas) {
-			somaNotas += disciplina.getNotaDisplina();
+			somaNotas += disciplina.getMediaNotas();
 		}
 
 		return somaNotas / disciplinas.size();
@@ -113,13 +114,13 @@ public class Aluno extends Pessoa {
 		double media = this.getMediaNota();
 		if (media >= 50) {
 			if (media >= 70) {
-				return "Aluno está aprovado";
+				return true;
 			}else {
-				return "Aluno em recuperação";
+				return false;
 			}
 
 		} else {
-			return "Aluno está reprovado";
+			return StatusAluno.REPROVADO ;
 		}
 	}
 
@@ -137,4 +138,6 @@ public class Aluno extends Pessoa {
 		return 1500.00;
 	}
 	/**/
+
+	
 }
